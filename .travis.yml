@@ -30,7 +30,7 @@ addons:
 #     - libtool
       - autoconf
       - automake
-      - iconv
+      - libiconv
 #     - gcc-7
 #     - g++-7
 #     - clang-5.0
