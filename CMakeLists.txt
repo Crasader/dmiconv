@@ -66,6 +66,7 @@ ELSE(WIN32)
         SET(ICONV_INCLUDE_DIRS "${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/libiconv/unix/include")
         SET(ICONV_LIBRARIES "libiconv" "libcharset")
         LINK_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/libiconv/unix/lib)
+        LINK_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/libiconv/unix/lib/.libs)	
     ENDIF()
 
    INCLUDE_DIRECTORIES(${ICONV_INCLUDE_DIRS})
