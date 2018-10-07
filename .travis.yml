@@ -30,7 +30,6 @@ addons:
 #     - libtool
       - autoconf
       - automake
-      - libiconv
 #     - gcc-7
 #     - g++-7
 #     - clang-5.0
@@ -72,6 +71,11 @@ before_script:
     fi
 
 script:
+  - pushd thirdparty/libiconv/unix
+  - sh configure
+  - make -j1
+  - make install
+  - popd
   - mkdir -p build && cd build
   - cmake .. -DCMAKE_BUILD_TYPE=$BUILD_TYPE
   - cmake --build .
