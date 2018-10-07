@@ -55,7 +55,7 @@ IF (WIN32)
    MESSAGE(STATUS "Using Iconv lib(s): ${ICONV_LIBRARIES}")
 ELSE(WIN32)
     MESSAGE(STATUS "Looking for libiconv")
-    FIND_PACKAGE(Iconv REQUIRED)
+    FIND_PACKAGE(Iconv)
 
     IF(ICONV_FOUND)
         MESSAGE(STATUS "Found Iconv version: ${ICONV_VERSION_STRING}")
