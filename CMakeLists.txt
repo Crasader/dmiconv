@@ -64,7 +64,7 @@ ELSE(WIN32)
     ELSE(ICONV_FOUND)
         SET(ICONV_VERSION_STRING "1.11.1")
         SET(ICONV_INCLUDE_DIRS "${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/libiconv/unix/include")
-        SET(ICONV_LIBRARIES "iconv" "charset")
+        SET(ICONV_LIBRARIES "libiconv" "libcharset")
         LINK_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/libiconv/unix/lib/.libs)
     ENDIF()
 
