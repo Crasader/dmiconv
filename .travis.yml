@@ -74,7 +74,6 @@ script:
   - pushd thirdparty/libiconv/unix
   - sh configure
   - make -j1
-  - make install
   - popd
   - mkdir -p build && cd build
   - cmake .. -DCMAKE_BUILD_TYPE=$BUILD_TYPE
