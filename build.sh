@@ -19,8 +19,8 @@
 pushd thirdparty/libiconv/unix
 sh configure
 make -j1
-make install
 popd
+
 rm -rf build
 mkdir build
 pushd build
