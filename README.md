@@ -18,7 +18,8 @@ Copyright (c) 2013-2018 brinkqiang (brink.qiang@gmail.com)
 
 ## Intro
 dmiconv
-```
+```cpp
+
 #include "dmos.h"
 #include "dmutil.h"
 #include "dmtypes.h"
@@ -49,6 +50,7 @@ int main(int argc, char* argv[]) {
     }
     return 0;
 }
+
 ```
 ## Contacts
 [![Join the chat](https://badges.gitter.im/brinkqiang/dmiconv/Lobby.svg)](https://gitter.im/brinkqiang/dmiconv)
