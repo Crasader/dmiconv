@@ -2,35 +2,10 @@ cmake_minimum_required(VERSION 2.8)
 
 PROJECT(dmiconv)
 
-IF (WIN32)  
-    MESSAGE(STATUS "Now is windows")
-
-    SET(DMOS_NAME "win")
-
-    SET( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}" )
-    IF(MSVC)
-        ADD_DEFINITIONS(/bigobj)
-        IF (MSVC_VERSION GREATER_EQUAL 1900)
-            INCLUDE(CheckCXXCompilerFlag)
-            CHECK_CXX_COMPILER_FLAG("/std:c++latest" _cpp_latest_flag_supported)
-            IF (_cpp_latest_flag_supported)
-                ADD_COMPILE_OPTIONS("/std:c++latest")
-            ENDIF()
-    	ENDIF()
-    ENDIF()
-ELSEIF (APPLE)  
-    MESSAGE(STATUS "Now is Apple systems")  
-
-    SET(DMOS_NAME "mac") 
-
-    SET( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -pthread" )
-ELSEIF (UNIX)  
-    MESSAGE(STATUS "Now is UNIX-like OS")  
- 
-    SET(DMOS_NAME "lin") 
-    
-    SET( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -pthread" )    
-ENDIF ()
+LIST(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
+INCLUDE(cmake/ModuleImport.cmake)
+INCLUDE(cmake/ModuleCompileOptions.cmake)
+ModuleSetCompileOptions()
 
 ADD_DEFINITIONS(-DUSE_DMICONV)
 IF (WIN32)
